@@ -1,0 +1,152 @@
+{
+  "directions": [
+    {
+      "title": "Biosphere-Atmosphere Interactions",
+      "titleCn": "生物圈-大气圈相互作用",
+      "description": "Investigating how vegetation dynamics influence and respond to climate through biogeophysical and biogeochemical feedbacks in the Earth system.",
+      "descriptionCn": "研究植被动态如何通过地球系统中的生物地球物理和生物地球化学反馈来影响和响应气候变化。",
+      "icon": "Leaf"
+    },
+    {
+      "title": "Global Change & Earth System",
+      "titleCn": "全球变化与地球系统",
+      "description": "Studying global environmental change using satellite remote sensing, ground observation networks, and earth system models.",
+      "descriptionCn": "利用卫星遥感、地面观测网络和地球系统模型研究全球环境变化。",
+      "icon": "Globe"
+    },
+    {
+      "title": "Climate Change Impacts",
+      "titleCn": "气候变化影响",
+      "description": "Quantifying the impacts of climate change on terrestrial ecosystems, hydrology, and human systems, with a focus on China and the tropics.",
+      "descriptionCn": "量化气候变化对陆地生态系统、水文和人类系统的影响，重点关注中国和热带地区。",
+      "icon": "Thermometer"
+    },
+    {
+      "title": "Climate Mitigation & Adaptation",
+      "titleCn": "气候减缓与适应",
+      "description": "Developing nature-based solutions for climate change mitigation, including forestation, wetland restoration, and renewable energy assessment.",
+      "descriptionCn": "开发基于自然的气候变化减缓解决方案，包括造林、湿地恢复和可再生能源评估。",
+      "icon": "Shield"
+    },
+    {
+      "title": "AI for Geoscience & Energy",
+      "titleCn": "人工智能与地球科学",
+      "description": "Applying machine learning and deep learning to reconstruct global datasets, improve weather forecasting, and assess renewable energy potential.",
+      "descriptionCn": "应用机器学习和深度学习重建全球数据集、改进天气预报和评估可再生能源潜力。",
+      "icon": "Cpu"
+    },
+    {
+      "title": "Remote Sensing of Land Use Change",
+      "titleCn": "土地利用变化遥感",
+      "description": "Monitoring and mapping global land cover change, deforestation, urbanization, and their environmental consequences using multi-source satellite imagery.",
+      "descriptionCn": "利用多源卫星影像监测和绘制全球土地覆盖变化、森林砍伐、城市化及其环境后果。",
+      "icon": "Satellite"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Climate change impacts on water-food-energy nexus in the Lancang-Mekong Basin",
+      "titleCn": "气候变化对澜沧江-湄公河流域水-粮-能源纽带的影响",
+      "source": "NSFC International Collaboration",
+      "sourceCn": "国家自然科学基金国际合作",
+      "period": "2024-2028",
+      "funding": "3M RMB",
+      "role": "PI (Project Lead)",
+      "roleCn": "项目负责人"
+    },
+    {
+      "title": "Integrated monitoring and early warning of marine meteorological information and ecological disasters",
+      "titleCn": "海洋气象信息与生态灾害综合监测预警",
+      "source": "Shenzhen Science and Technology Innovation Committee",
+      "sourceCn": "深圳市科技创新委员会",
+      "period": "2023-2026",
+      "funding": "3M RMB",
+      "role": "PI",
+      "roleCn": "项目负责人"
+    },
+    {
+      "title": "Offshore wind energy assessment under climate change in Guangdong-Hong Kong-Macao Greater Bay Area",
+      "titleCn": "粤港澳大湾区气候变化下海上风能评估",
+      "source": "Guangdong Basic and Applied Basic Research Foundation",
+      "sourceCn": "广东省基础与应用基础研究基金",
+      "period": "2022-2025",
+      "funding": "300K RMB",
+      "role": "PI",
+      "roleCn": "项目负责人"
+    },
+    {
+      "title": "Surface wind speed changes in China and its impact on wind energy production",
+      "titleCn": "中国地表风速变化及其对风能产量的影响",
+      "source": "NSFC General Program",
+      "sourceCn": "国家自然科学基金面上项目",
+      "period": "2021-2024",
+      "funding": "550K RMB",
+      "role": "PI",
+      "roleCn": "项目负责人"
+    }
+  ],
+  "courses": [
+    {
+      "name": "Global Climate Change",
+      "nameCn": "全球气候变化",
+      "type": "Undergraduate",
+      "hours": "48",
+      "language": "English"
+    },
+    {
+      "name": "Ecological Climatology",
+      "nameCn": "生态气候学",
+      "type": "Graduate",
+      "hours": "48",
+      "language": "English"
+    },
+    {
+      "name": "Global Environmental Issues",
+      "nameCn": "全球环境问题",
+      "type": "Undergraduate",
+      "hours": "2/year",
+      "language": "Chinese"
+    },
+    {
+      "name": "Environmental Science & Engineering Research Methods",
+      "nameCn": "环境科学与工程研究方法",
+      "type": "Graduate",
+      "hours": "2/year",
+      "language": "Chinese"
+    }
+  ],
+  "datasets": [
+    {
+      "title": "Global evapotranspiration (WB-MTE)",
+      "titleCn": "全球蒸散发数据集 (WB-MTE)",
+      "description": "Global monthly ET maps at 0.5° resolution from 1982 to 2009, developed through coupling a water balance model with machine-learning algorithm.",
+      "descriptionCn": "1982-2009年全球月尺度蒸散发数据，分辨率0.5°，通过耦合水量平衡模型与机器学习算法开发。",
+      "downloadUrl": "#",
+      "codesUrl": "#"
+    },
+    {
+      "title": "GGWS-PCNN: Global gridded monthly wind speed dataset",
+      "titleCn": "GGWS-PCNN：全球格网月风速数据集",
+      "description": "A global wind speed dataset developed by the partial convolutional neural network, assimilating wind pattern from HadISD and 34 climate models (1973-2021).",
+      "descriptionCn": "基于偏卷积神经网络开发的全球风速数据集，融合HadISD和34个气候模式的风场信息（1973-2021）。",
+      "downloadUrl": "#",
+      "codesUrl": "#"
+    },
+    {
+      "title": "Floating photovoltaics on global reservoirs",
+      "titleCn": "全球水库漂浮式光伏",
+      "description": "Energy production and water savings assessment from floating solar photovoltaics on global reservoirs.",
+      "descriptionCn": "全球水库漂浮式太阳能光伏的能源产量和节水评估。",
+      "downloadUrl": "#",
+      "codesUrl": "#"
+    },
+    {
+      "title": "Fine-scale tropical forest cover mapping for Southeast Asia",
+      "titleCn": "东南亚高分辨率热带森林覆盖制图",
+      "description": "High-resolution forest cover maps using Planet-NICFI and Sentinel-1 imagery for Southeast Asia (2016-2021).",
+      "descriptionCn": "利用Planet-NICFI和Sentinel-1影像制作的东南亚高分辨率森林覆盖图（2016-2021）。",
+      "downloadUrl": "#",
+      "codesUrl": "#"
+    }
+  ]
+}

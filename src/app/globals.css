@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --earth-green-deep: #1B4332;
+  --earth-green: #2D6A4F;
+  --earth-green-soft: #74C69D;
+  --earth-green-glow: rgba(116, 198, 157, 0.15);
+  --earth-blue: #1D3557;
+  --neutral-bg: #FAFAFA;
+  --neutral-gray: #EDEDED;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B6B6B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-neutral-bg text-neutral-text font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light tracking-tight;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-content mx-auto px-6 md:px-8;
+  }
+}
+
+/* Hero Earth Animation */
+@keyframes earthRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes earthFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes earthBreathe {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(1.02); }
+}
+
+@keyframes particleOrbit1 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes particleOrbit2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes particleOrbit3 {
+  0% { transform: rotate(60deg); }
+  100% { transform: rotate(420deg); }
+}
+
+@keyframes particlePulse {
+  0%, 100% { opacity: 0.3; r: 1.5; }
+  50% { opacity: 0.8; r: 2.5; }
+}
+
+@keyframes particleDrift {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  20% { opacity: 0.6; }
+   80% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-30px) scale(1.2); }
+}
+
+.animate-earth-rotate {
+  animation: earthRotate 120s linear infinite;
+}
+
+.animate-earth-float {
+  animation: earthFloat 8s ease-in-out infinite;
+}
+
+.animate-earth-breathe {
+  animation: earthBreathe 6s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 4s ease-in-out infinite;
+}
