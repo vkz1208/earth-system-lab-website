@@ -35,9 +35,18 @@
       "求是杰出青年学者奖 (2020)"
     ],
     "links": [
-      { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=dRBye2oAAAAJ" },
-      { "label": "ResearchGate", "url": "https://www.researchgate.net/profile/Zhenzhong-Zeng" },
-      { "label": "CV", "url": "/cv.pdf" }
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=dRBye2oAAAAJ"
+      },
+      {
+        "label": "ResearchGate",
+        "url": "https://www.researchgate.net/profile/Zhenzhong-Zeng"
+      },
+      {
+        "label": "CV",
+        "url": "/cv.pdf"
+      }
     ]
   },
   "members": [
@@ -65,10 +74,12 @@
     },
     {
       "name": "Khan Muhammad Asif",
-      "nameCn": "",
+      "nameCn": "留学生",
       "role": "Postdoc",
       "roleCn": "博士后",
       "email": "asif@sustech.edu.cn",
+      "education": "",
+      "educationCn": "",
       "started": "Jul 2022",
       "photo": "/images/team/asif.jpg"
     },
@@ -84,9 +95,10 @@
     {
       "name": "Shuxin Luo",
       "nameCn": "罗舒心",
-      "role": "Postdoc",
+      "role": "Research Assistant Professor",
       "roleCn": "博士后",
       "email": "luosx@sustech.edu.cn",
+      "education": "",
       "started": "Jan 2024",
       "photo": "/images/team/shuxin_luo.jpg"
     },
@@ -282,20 +294,60 @@
   ],
   "alumni": {
     "members": [
-      { "name": "Feng Yang", "nameCn": "杨锋", "current": "Northwest A&F University" },
-      { "name": "Yu Feng", "nameCn": "冯宇", "current": "Laboratoire des Sciences du Climat et de l'Environnement" },
-      { "name": "He Chen", "nameCn": "陈赫", "current": "" },
-      { "name": "Wenxin Fan", "nameCn": "范文欣", "current": "" },
-      { "name": "Ziyu Lin", "nameCn": "林子玉", "current": "Hong Kong University" },
-      { "name": "Yang Liu", "nameCn": "刘洋", "current": "" },
-      { "name": "Yi Liu", "nameCn": "刘怡", "current": "" }
+      {
+        "name": "Feng Yang",
+        "nameCn": "杨锋",
+        "current": "Northwest A&F University"
+      },
+      {
+        "name": "Yu Feng",
+        "nameCn": "冯宇",
+        "current": "Laboratoire des Sciences du Climat et de l'Environnement"
+      },
+      {
+        "name": "He Chen",
+        "nameCn": "陈赫",
+        "current": ""
+      },
+      {
+        "name": "Wenxin Fan",
+        "nameCn": "范文欣",
+        "current": ""
+      },
+      {
+        "name": "Ziyu Lin",
+        "nameCn": "林子玉",
+        "current": "Hong Kong University"
+      },
+      {
+        "name": "Yang Liu",
+        "nameCn": "刘洋",
+        "current": ""
+      },
+      {
+        "name": "Yi Liu",
+        "nameCn": "刘怡",
+        "current": ""
+      }
     ],
     "masterStudents": [
-      { "name": "Lihong Zhou", "nameCn": "周俐宏", "current": "" }
+      {
+        "name": "Lihong Zhou",
+        "nameCn": "周俐宏",
+        "current": ""
+      }
     ],
     "bachelorStudents": [
-      { "name": "Yi Liu", "nameCn": "刘依", "current": "University of Michigan" },
-      { "name": "Shijie Hu", "nameCn": "胡世杰", "current": "ETH Zürich" }
+      {
+        "name": "Yi Liu",
+        "nameCn": "刘依",
+        "current": "University of Michigan"
+      },
+      {
+        "name": "Shijie Hu",
+        "nameCn": "胡世杰",
+        "current": "ETH Zürich"
+      }
     ]
   }
 }
