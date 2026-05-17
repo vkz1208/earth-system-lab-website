@@ -102,12 +102,13 @@
     {
       "name": "Shuxin Luo",
       "nameCn": "罗舒心",
-      "role": "Research Assistant Professor",
+      "role": "Postdoc",
       "roleCn": "博士后",
       "email": "luosx@sustech.edu.cn",
       "education": "",
       "started": "Jan 2024",
-      "photo": "/images/team/shuxin_luo.jpg"
+      "photo": "/images/team/shuxin_luo.jpg",
+      "_origIdx": 4
     },
     {
       "name": "Xinyue He",
