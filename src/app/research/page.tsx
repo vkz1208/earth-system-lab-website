@@ -2,18 +2,10 @@
 
 import PageHero from '@/components/PageHero';
 import SectionTitle from '@/components/SectionTitle';
-import { useLanguage } from '@/components/LanguageContext';
-import { Leaf, Globe, Thermometer, Shield, Cpu, Satellite, Download, Code } from 'lucide-react';
-import researchData from '@/data/research.json';
-
-const iconMap: Record<string, React.ReactNode> = {
-  Leaf: <Leaf size={28} strokeWidth={1.5} />,
-  Globe: <Globe size={28} strokeWidth={1.5} />,
-  Thermometer: <Thermometer size={28} strokeWidth={1.5} />,
-  Shield: <Shield size={28} strokeWidth={1.5} />,
-  Cpu: <Cpu size={28} strokeWidth={1.5} />,
-  Satellite: <Satellite size={28} strokeWidth={1.5} />,
-};
+import { useLanguage, localizeField } from '@/components/LanguageContext';
+import { researchIconMap } from '@/components/IconMap';
+import { Download, Code } from 'lucide-react';
+import { research as researchData } from '@/data';
 
 export default function ResearchPage() {
   const { lang, t } = useLanguage();
@@ -32,16 +24,18 @@ export default function ResearchPage() {
           {researchData.directions.map((dir) => (
             <div
               key={dir.title}
-              className="p-8 rounded-card border border-neutral-gray bg-white hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+              className="p-6 rounded-card border border-neutral-gray bg-white"
             >
-              <div className="text-earth-green-deep mb-4">
-                {iconMap[dir.icon] || <Globe size={28} strokeWidth={1.5} />}
+              <div className="flex items-center gap-3 mb-2">
+                <div className="text-earth-green-deep flex-shrink-0">
+                  {researchIconMap[dir.icon] || researchIconMap['Globe']}
+                </div>
+                <h3 className="text-base font-semibold text-earth-green-deep">
+                  {localizeField(dir, 'title', lang)}
+                </h3>
               </div>
-              <h3 className="text-base font-normal text-earth-green-deep mb-2">
-                {lang === 'zh' ? (dir as any).titleCn || dir.title : dir.title}
-              </h3>
-              <p className="text-sm text-neutral-text-secondary leading-relaxed">
-                {lang === 'zh' ? (dir as any).descriptionCn || dir.description : dir.description}
+              <p className="text-xs text-neutral-text-secondary leading-relaxed">
+                {localizeField(dir, 'description', lang)}
               </p>
             </div>
           ))}
@@ -51,61 +45,34 @@ export default function ResearchPage() {
       {/* Courses */}
       <section className="section-container pb-16 md:pb-24">
         <SectionTitle>{t('research.teaching')}</SectionTitle>
-        <div className="space-y-4">
+        <ul className="space-y-2.5">
           {researchData.courses.map((course) => (
-            <div
-              key={course.name}
-              className="p-6 rounded-card border border-neutral-gray bg-white"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                <div>
-                  <h3 className="text-base text-neutral-text">
-                    {lang === 'zh' ? course.nameCn : course.name}
-                  </h3>
-                  <p className="text-sm text-neutral-text-secondary mt-1">
-                    {lang === 'en' ? course.nameCn : course.name}
-                  </p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-xs px-2 py-1 rounded-full border border-neutral-gray text-neutral-text-secondary">
-                    {course.type}
-                  </span>
-                  <span className="text-xs px-2 py-1 rounded-full border border-neutral-gray text-neutral-text-secondary">
-                    {course.hours}h
-                  </span>
-                  <span className="text-xs px-2 py-1 rounded-full border border-neutral-gray text-neutral-text-secondary">
-                    {course.language}
-                  </span>
-                </div>
-              </div>
-            </div>
+            <li key={course.name} className="flex items-baseline gap-2.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-text-secondary flex-shrink-0 mt-2" />
+              <span className="text-sm text-neutral-text leading-relaxed">
+                <span className="font-medium">{lang === 'zh' ? course.nameCn : course.name}</span>
+                <span className="text-neutral-text-secondary"> ({lang === 'en' ? course.nameCn : course.name})</span>
+                <span className="text-neutral-text-secondary"> · {course.type} · {course.hours}h · {course.language}</span>
+              </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {/* Projects */}
       <section className="section-container pb-16 md:pb-24">
         <SectionTitle>{t('research.projects')}</SectionTitle>
-        <div className="space-y-4">
+        <ul className="space-y-2.5">
           {researchData.projects.map((project) => (
-            <div
-              key={project.title}
-              className="p-6 rounded-card border border-neutral-gray bg-white"
-            >
-              <h3 className="text-base text-neutral-text">
-                {lang === 'zh' ? (project as any).titleCn || project.title : project.title}
-              </h3>
-              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-neutral-text-secondary">
-                <span>{lang === 'zh' ? (project as any).sourceCn || project.source : project.source}</span>
-                <span>{project.period}</span>
-                <span>{project.funding}</span>
-                <span className="text-earth-green">
-                  {lang === 'zh' ? (project as any).roleCn || project.role : project.role}
-                </span>
-              </div>
-            </div>
+            <li key={project.title} className="flex items-baseline gap-2.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-text-secondary flex-shrink-0 mt-2" />
+              <span className="text-sm text-neutral-text leading-relaxed">
+                <span className="font-medium">{localizeField(project, 'title', lang)}</span>
+                <span className="text-neutral-text-secondary"> · {localizeField(project, 'source', lang)} · {project.period} · {project.funding} · {localizeField(project, 'role', lang)}</span>
+              </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {/* Datasets */}
@@ -117,11 +84,11 @@ export default function ResearchPage() {
               key={dataset.title}
               className="p-6 rounded-card border border-neutral-gray bg-white"
             >
-              <h3 className="text-base text-neutral-text mb-2">
-                {lang === 'zh' ? (dataset as any).titleCn || dataset.title : dataset.title}
+              <h3 className="text-lg font-medium text-earth-green-deep mb-2">
+                {localizeField(dataset, 'title', lang)}
               </h3>
               <p className="text-sm text-neutral-text-secondary leading-relaxed mb-4">
-                {lang === 'zh' ? (dataset as any).descriptionCn || dataset.description : dataset.description}
+                {localizeField(dataset, 'description', lang)}
               </p>
               <div className="flex gap-3">
                 {dataset.downloadUrl && (

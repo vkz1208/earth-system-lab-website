@@ -1,0 +1,247 @@
+backend:
+  name: github
+  repo: vkz1208/earth-system-lab-website
+  branch: main
+  base_url: https://earth-system-lab-website.vercel.app
+  auth_endpoint: /api/auth
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  # ==================== 团队数据（合并 PI + 成员 + 校友，避免同文件重复提交） ====================
+  - name: "team"
+    label: "团队数据"
+    files:
+      - name: "team"
+        label: "团队数据管理"
+        file: "src/data/team.json"
+        fields:
+          - label: "PI / 课题组负责人"
+            name: "pi"
+            widget: "object"
+            fields:
+              - { label: "英文名", name: "name", widget: "string" }
+              - { label: "中文名", name: "nameCn", widget: "string" }
+              - { label: "角色", name: "role", widget: "string", default: "Professor" }
+              - { label: "英文头衔", name: "title", widget: "string" }
+              - { label: "中文头衔", name: "titleCn", widget: "string" }
+              - { label: "邮箱", name: "email", widget: "string" }
+              - { label: "电话", name: "phone", widget: "string" }
+              - { label: "照片路径", name: "photo", widget: "image" }
+              - label: "教育经历（英文）"
+                name: "education"
+                widget: "list"
+                field: { label: "学历", name: "edu", widget: "string" }
+              - label: "教育经历（中文）"
+                name: "educationCn"
+                widget: "list"
+                field: { label: "学历", name: "edu", widget: "string" }
+              - { label: "简介（英文）", name: "bio", widget: "text" }
+              - { label: "简介（中文）", name: "bioCn", widget: "text" }
+              - label: "荣誉（英文）"
+                name: "honors"
+                widget: "list"
+                field: { label: "荣誉", name: "honor", widget: "string" }
+              - label: "荣誉（中文）"
+                name: "honorsCn"
+                widget: "list"
+                field: { label: "荣誉", name: "honor", widget: "string" }
+              - label: "链接"
+                name: "links"
+                widget: "list"
+                fields:
+                  - { label: "标签", name: "label", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+              - label: "学术统计"
+                name: "stats"
+                widget: "list"
+                label_singular: "统计项"
+                fields:
+                  - { label: "数值", name: "value", widget: "string" }
+                  - { label: "标签（英文）", name: "label", widget: "string" }
+                  - { label: "标签（中文）", name: "labelCn", widget: "string" }
+              - { label: "数据来源（英文）", name: "statsSource", widget: "string", hint: "As of May 2026 · Google Scholar" }
+              - { label: "数据来源（中文）", name: "statsSourceCn", widget: "string", hint: "截至 2026年5月 · Google Scholar" }
+
+          - label: "成员列表"
+            name: "members"
+            widget: "list"
+            label_singular: "成员"
+            fields:
+              - { label: "英文名", name: "name", widget: "string" }
+              - { label: "中文名", name: "nameCn", widget: "string", hint: "留学生可留空" }
+              - label: "角色"
+                name: "role"
+                widget: "select"
+                options:
+                  - { label: "Research Assistant Professor", value: "Research Assistant Professor" }
+                  - { label: "Postdoc", value: "Postdoc" }
+                  - { label: "PhD Student", value: "PhD Student" }
+                  - { label: "Master Student", value: "Master Student" }
+                  - { label: "Undergraduate", value: "Undergraduate" }
+                  - { label: "Secretary", value: "Secretary" }
+              - { label: "角色（中文）", name: "roleCn", widget: "string" }
+              - { label: "邮箱", name: "email", widget: "string", required: false }
+              - { label: "教育经历（英文）", name: "education", widget: "string", required: false }
+              - { label: "教育经历（中文）", name: "educationCn", widget: "string", required: false }
+              - { label: "入职/入学时间", name: "started", widget: "string", hint: "如 Sep 2023", required: false }
+              - { label: "照片", name: "photo", widget: "image", required: false }
+
+          - label: "校友"
+            name: "alumni"
+            widget: "object"
+            fields:
+              - label: "前成员"
+                name: "members"
+                widget: "list"
+                label_singular: "前成员"
+                fields:
+                  - { label: "英文名", name: "name", widget: "string" }
+                  - { label: "中文名", name: "nameCn", widget: "string" }
+                  - { label: "现单位", name: "current", widget: "string", required: false }
+              - label: "前硕士"
+                name: "masterStudents"
+                widget: "list"
+                label_singular: "前硕士"
+                fields:
+                  - { label: "英文名", name: "name", widget: "string" }
+                  - { label: "中文名", name: "nameCn", widget: "string" }
+                  - { label: "现单位", name: "current", widget: "string", required: false }
+              - label: "前本科"
+                name: "bachelorStudents"
+                widget: "list"
+                label_singular: "前本科"
+                fields:
+                  - { label: "英文名", name: "name", widget: "string" }
+                  - { label: "中文名", name: "nameCn", widget: "string" }
+                  - { label: "现单位", name: "current", widget: "string", required: false }
+
+  # ==================== 研究数据（合并方向+教学+项目+数据集） ====================
+  - name: "research"
+    label: "研究数据"
+    files:
+      - name: "research"
+        label: "研究数据管理"
+        file: "src/data/research.json"
+        fields:
+          - label: "研究方向"
+            name: "directions"
+            widget: "list"
+            label_singular: "方向"
+            fields:
+              - { label: "标题（英文）", name: "title", widget: "string" }
+              - { label: "标题（中文）", name: "titleCn", widget: "string" }
+              - { label: "描述（英文）", name: "description", widget: "text" }
+              - { label: "描述（中文）", name: "descriptionCn", widget: "text" }
+              - label: "图标"
+                name: "icon"
+                widget: "select"
+                options:
+                  - { label: "树叶 Leaf", value: "Leaf" }
+                  - { label: "地球 Globe", value: "Globe" }
+                  - { label: "温度计 Thermometer", value: "Thermometer" }
+                  - { label: "盾牌 Shield", value: "Shield" }
+                  - { label: "芯片 Cpu", value: "Cpu" }
+                  - { label: "卫星 Satellite", value: "Satellite" }
+
+          - label: "课程"
+            name: "courses"
+            widget: "list"
+            label_singular: "课程"
+            fields:
+              - { label: "课程名（英文）", name: "name", widget: "string" }
+              - { label: "课程名（中文）", name: "nameCn", widget: "string" }
+              - label: "类型"
+                name: "type"
+                widget: "select"
+                options: ["Undergraduate", "Graduate"]
+              - { label: "学时", name: "hours", widget: "string" }
+              - label: "授课语言"
+                name: "language"
+                widget: "select"
+                options: ["English", "Chinese"]
+
+          - label: "项目"
+            name: "projects"
+            widget: "list"
+            label_singular: "项目"
+            fields:
+              - { label: "标题（英文）", name: "title", widget: "string" }
+              - { label: "标题（中文）", name: "titleCn", widget: "string" }
+              - { label: "来源（英文）", name: "source", widget: "string" }
+              - { label: "来源（中文）", name: "sourceCn", widget: "string" }
+              - { label: "周期", name: "period", widget: "string", hint: "如 2024-2028" }
+              - { label: "经费", name: "funding", widget: "string" }
+              - { label: "角色（英文）", name: "role", widget: "string" }
+              - { label: "角色（中文）", name: "roleCn", widget: "string" }
+
+          - label: "数据集"
+            name: "datasets"
+            widget: "list"
+            label_singular: "数据集"
+            fields:
+              - { label: "标题（英文）", name: "title", widget: "string" }
+              - { label: "标题（中文）", name: "titleCn", widget: "string" }
+              - { label: "描述（英文）", name: "description", widget: "text" }
+              - { label: "描述（中文）", name: "descriptionCn", widget: "text" }
+              - { label: "下载链接", name: "downloadUrl", widget: "string", required: false }
+              - { label: "代码链接", name: "codesUrl", widget: "string", required: false }
+
+  # ==================== 论文 ====================
+  - name: "papers"
+    label: "发表论文"
+    label_singular: "论文"
+    files:
+      - name: "papers"
+        label: "论文列表"
+        file: "src/data/papers.json"
+        fields:
+          - label: "论文"
+            name: "papers"
+            widget: "list"
+            summary: "{{title}} ({{year}})"
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int" }
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "作者", name: "authors", widget: "text" }
+              - { label: "期刊", name: "journal", widget: "string" }
+              - { label: "年份", name: "year", widget: "number", value_type: "int" }
+              - { label: "卷", name: "volume", widget: "string", required: false }
+              - { label: "期", name: "issue", widget: "string", required: false }
+              - { label: "页码", name: "pages", widget: "string", required: false }
+              - { label: "DOI", name: "doi", widget: "string", required: false }
+              - label: "分类"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Nature/Science", value: "Nature/Science" }
+                  - { label: "Environmental Science", value: "Environmental Science" }
+                  - { label: "Energy", value: "Energy" }
+                  - { label: "Earth System Science", value: "Earth System Science" }
+              - { label: "通讯作者", name: "isCorresponding", widget: "boolean", required: false, default: false }
+              - { label: "第一作者", name: "isFirstAuthor", widget: "boolean", required: false, default: false }
+              - { label: "配图", name: "image", widget: "image", required: false, hint: "精选论文配图，不上传则显示占位图" }
+
+  # ==================== 新闻 ====================
+  - name: "news"
+    label: "新闻动态"
+    label_singular: "新闻"
+    files:
+      - name: "news"
+        label: "新闻列表"
+        file: "src/data/news.json"
+        fields:
+          - label: "新闻"
+            name: "news"
+            widget: "list"
+            summary: "{{date}} - {{title}}"
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int" }
+              - { label: "日期", name: "date", widget: "string", hint: "如 2025-01" }
+              - { label: "标题（英文）", name: "title", widget: "string" }
+              - { label: "标题（中文）", name: "titleCn", widget: "string" }
+              - { label: "摘要（英文）", name: "summary", widget: "text" }
+              - { label: "摘要（中文）", name: "summaryCn", widget: "text" }
+              - { label: "配图", name: "image", widget: "image", required: false, hint: "不上传则显示占位图" }
+              - { label: "链接", name: "link", widget: "string", required: false }

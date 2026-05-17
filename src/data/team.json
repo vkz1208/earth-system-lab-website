@@ -22,7 +22,7 @@
     "bioCn": "曾振中，南方科技大学环境科学与工程学院教授、长江学者特聘教授。研究方向为地球系统过程与全球变化，已在 Nature、Science、Nature Sustainability、Nature Climate Change、Nature Geoscience、Nature Water 等期刊发表论文189余篇。",
     "honors": [
       "Changjiang Distinguished Professor (2023)",
-      "Highly Cited Researchers (2020-2025)",
+      "Highly Cited Researchers (2020-2026)",
       "Top 2% Scientists Worldwide by Stanford University",
       "AOGS HS Kamide Lecture Award (2022)",
       "Qiushi Outstanding Young Scholar Award (2020)"
@@ -47,14 +47,21 @@
         "label": "CV",
         "url": "/cv.pdf"
       }
-    ]
+    ],
+    "scholarStats": {
+      "citations": "24,795",
+      "hIndex": "64",
+      "i10Index": "160",
+      "publications": "150+",
+      "asOf": "2026-05"
+    }
   },
   "members": [
     {
       "name": "Dashan Wang",
       "nameCn": "王大山",
       "role": "Research Assistant Professor",
-      "roleCn": "研究助理教授",
+      "roleCn": "博士生",
       "email": "wangds6@sustech.edu.cn",
       "education": "B.S. & PhD Sun Yat-sen University; Postdoc SUSTech",
       "educationCn": "本科、博士 中山大学；博士后 南方科技大学",
@@ -297,56 +304,86 @@
       {
         "name": "Feng Yang",
         "nameCn": "杨锋",
-        "current": "Northwest A&F University"
+        "role": "Postdoc",
+        "roleCn": "博士后",
+        "current": "Northwest A&F University",
+        "currentCn": "西北农林科技大学"
       },
       {
         "name": "Yu Feng",
         "nameCn": "冯宇",
-        "current": "Laboratoire des Sciences du Climat et de l'Environnement"
+        "role": "Postdoc",
+        "roleCn": "博士后",
+        "current": "Laboratoire des Sciences du Climat et de l'Environnement",
+        "currentCn": "法国气候与环境科学实验室"
       },
       {
         "name": "He Chen",
         "nameCn": "陈赫",
-        "current": ""
+        "role": "Postdoc",
+        "roleCn": "博士后",
+        "current": "",
+        "currentCn": ""
       },
       {
         "name": "Wenxin Fan",
         "nameCn": "范文欣",
-        "current": ""
+        "role": "Postdoc",
+        "roleCn": "博士后",
+        "current": "",
+        "currentCn": ""
       },
       {
         "name": "Ziyu Lin",
         "nameCn": "林子玉",
-        "current": "Hong Kong University"
+        "role": "PhD Student",
+        "roleCn": "博士研究生",
+        "current": "Hong Kong University",
+        "currentCn": "香港大学"
       },
       {
         "name": "Yang Liu",
         "nameCn": "刘洋",
-        "current": ""
+        "role": "PhD Student",
+        "roleCn": "博士研究生",
+        "current": "",
+        "currentCn": ""
       },
       {
         "name": "Yi Liu",
         "nameCn": "刘怡",
-        "current": ""
+        "role": "PhD Student",
+        "roleCn": "博士研究生",
+        "current": "",
+        "currentCn": ""
       }
     ],
     "masterStudents": [
       {
         "name": "Lihong Zhou",
         "nameCn": "周俐宏",
-        "current": ""
+        "role": "Master Student",
+        "roleCn": "硕士研究生",
+        "current": "",
+        "currentCn": ""
       }
     ],
     "bachelorStudents": [
       {
         "name": "Yi Liu",
         "nameCn": "刘依",
-        "current": "University of Michigan"
+        "role": "Undergraduate",
+        "roleCn": "本科生",
+        "current": "University of Michigan",
+        "currentCn": "密歇根大学"
       },
       {
         "name": "Shijie Hu",
         "nameCn": "胡世杰",
-        "current": "ETH Zürich"
+        "role": "Undergraduate",
+        "roleCn": "本科生",
+        "current": "ETH Zürich",
+        "currentCn": "苏黎世联邦理工学院"
       }
     ]
   }

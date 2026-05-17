@@ -1,132 +1,274 @@
-[
-  {
-    "id": 1,
-    "date": "2025-01",
-    "title": "Impact of Amazonian deforestation on precipitation reverses between seasons",
-    "titleCn": "亚马逊森林砍伐对降水的影响在季节间逆转",
-    "summary": "Our study published in Nature reveals that the impact of Amazonian deforestation on precipitation reverses between wet and dry seasons, providing critical insights for conservation policy.",
-    "summaryCn": "我们发表于 Nature 的研究揭示了亚马逊森林砍伐对降水的影响在旱季和雨季之间逆转，为保护政策提供了关键见解。",
-    "image": "/images/news/amazon_deforestation.png",
-    "link": "https://doi.org/10.1038/s41586-024-08570-y"
-  },
-  {
-    "id": 2,
-    "date": "2025-01",
-    "title": "Record-breaking 2023 marine heatwaves published in Science",
-    "titleCn": "2023年破纪录的海洋热浪研究发表于 Science",
-    "summary": "Our research on record-breaking 2023 marine heatwaves, published in Science, documents unprecedented ocean warming events and their implications for marine ecosystems and infrastructure.",
-    "summaryCn": "我们发表于 Science 的关于2023年破纪录海洋热浪的研究，记录了前所未有的海洋变暖事件及其对海洋生态系统和基础设施的影响。",
-    "image": "",
-    "link": "https://doi.org/10.1126/science.adr0910"
-  },
-  {
-    "id": 3,
-    "date": "2025-01",
-    "title": "Climate mitigation potential for targeted forestation published in Science Advances",
-    "titleCn": "针对性造林的气候减缓潜力研究发表于 Science Advances",
-    "summary": "Our study in Science Advances evaluates the climate mitigation potential of targeted forestation after considering climate change, fires, and albedo effects.",
-    "summaryCn": "我们发表于 Science Advances 的研究在考虑气候变化、火灾和反照率效应后，评估了针对性造林的气候减缓潜力。",
-    "image": "",
-    "link": "https://doi.org/10.1126/sciadv.adn7915"
-  },
-  {
-    "id": 4,
-    "date": "2024-12",
-    "title": "Asymmetric sensitivity of boreal forest resilience published in Nature Ecology & Evolution",
-    "titleCn": "北方森林恢复力的不对称敏感性研究发表于 Nature Ecology & Evolution",
-    "summary": "Our research reveals asymmetric sensitivity of boreal forest resilience to forest gain and loss, published in Nature Ecology & Evolution.",
-    "summaryCn": "我们的研究揭示了北方森林恢复力对森林增加和减少的不对称敏感性，发表于 Nature Ecology & Evolution。",
-    "image": "/images/news/boreal_resilience.png",
-    "link": "https://doi.org/10.1038/s41559-024-02631-1"
-  },
-  {
-    "id": 5,
-    "date": "2024-04",
-    "title": "Urgent need to improve modelled sensitivity of evaporation to vegetation change",
-    "titleCn": "迫切需要改进蒸发对植被变化敏感性的模拟",
-    "summary": "Published in Nature Water, this study highlights the urgent need to improve how Earth system models represent the sensitivity of evaporation to vegetation change.",
-    "summaryCn": "发表于 Nature Water 的本研究强调了迫切需要改进地球系统模型对蒸发对植被变化敏感性的表征。",
-    "image": "/images/news/evaporation_sensitivity.png",
-    "link": "https://doi.org/10.1038/s44221-024-00203-y"
-  },
-  {
-    "id": 6,
-    "date": "2024-01",
-    "title": "Extreme climate sparks record boreal wildfires and carbon surge in 2023",
-    "titleCn": "极端气候引发2023年破纪录的北方野火和碳激增",
-    "summary": "Our study published in The Innovation documents how extreme climate conditions sparked record boreal wildfires and a carbon surge in 2023.",
-    "summaryCn": "我们发表于 The Innovation 的研究记录了极端气候条件如何引发2023年破纪录的北方野火和碳激增。",
-    "image": "",
-    "link": "https://doi.org/10.1016/j.xinn.2024.100631"
-  },
-  {
-    "id": 7,
-    "date": "2023-12",
-    "title": "Prof. Zeng selected as Changjiang Distinguished Professor",
-    "titleCn": "曾老师入选长江学者特聘教授",
-    "summary": "Professor Zhenzhong Zeng was selected for the Changjiang Distinguished Professor award in Earth System Science by the Ministry of Education of China.",
-    "summaryCn": "曾振中教授入选教育部长江学者特聘教授（地球系统科学）。",
-    "image": "",
-    "link": ""
-  },
-  {
-    "id": 8,
-    "date": "2022-08",
-    "title": "Prof. Zeng received AOGS HS Kamide Lecture Award",
-    "titleCn": "曾老师获AOGS HS鹰见讲座奖",
-    "summary": "Professor Zeng received the Kamide Lecture Award at the 19th Asia Oceania Geosciences Society (AOGS) annual meeting.",
-    "summaryCn": "曾振中教授在第19届亚洲大洋洲地球科学学会（AOGS）年会上获得鹰见讲座奖。",
-    "image": "",
-    "link": ""
-  },
-  {
-    "id": 9,
-    "date": "2022-05",
-    "title": "Doubling of annual forest carbon loss over the tropics published in Nature Sustainability",
-    "titleCn": "热带年度森林碳损失翻倍研究发表于 Nature Sustainability",
-    "summary": "Our study published in Nature Sustainability (Cover) reveals that annual forest carbon loss over the tropics has doubled during the early twenty-first century.",
-    "summaryCn": "我们发表于 Nature Sustainability（封面）的研究揭示了21世纪初热带地区年度森林碳损失已经翻倍。",
-    "image": "/images/news/forest_carbon_loss.png",
-    "link": "https://doi.org/10.1038/s41893-022-00854-3"
-  },
-  {
-    "id": 10,
-    "date": "2020-10",
-    "title": "Prof. Zeng received Qiushi Outstanding Young Scholar Award",
-    "titleCn": "曾老师获求是杰出青年学者奖",
-    "summary": "Professor Zhenzhong Zeng received the prestigious Qiushi Outstanding Young Scholar Award.",
-    "summaryCn": "曾振中教授荣获求是杰出青年学者奖。",
-    "image": "",
-    "link": ""
-  },
-  {
-    "id": 11,
-    "date": "2019-12",
-    "title": "A reversal in global terrestrial stilling published in Nature Climate Change",
-    "titleCn": "全球陆地风速静止逆转研究发表于 Nature Climate Change",
-    "summary": "Our study published in Nature Climate Change reveals a reversal in global terrestrial stilling and its implications for wind energy production.",
-    "summaryCn": "我们发表于 Nature Climate Change 的研究揭示了全球陆地风速静止的逆转及其对风能产量的影响。",
-    "image": "/images/news/terrestrial_stilling.png",
-    "link": "https://doi.org/10.1038/s41558-019-0622-6"
-  },
-  {
-    "id": 12,
-    "date": "2018-08",
-    "title": "Highland cropland expansion and forest loss in Southeast Asia published in Nature Geoscience",
-    "titleCn": "东南亚高地农田扩张与森林损失研究发表于 Nature Geoscience",
-    "summary": "Our study in Nature Geoscience documents large increases in cultivated areas in Southeast Asian highlands that have evolved from forests.",
-    "summaryCn": "我们发表于 Nature Geoscience 的研究记录了东南亚高地耕种面积的大幅增加，这些区域由森林演变而来。",
-    "image": "/images/news/highland_cropland.jpg",
-    "link": "https://doi.org/10.1038/s41561-018-0166-9"
-  },
-  {
-    "id": 13,
-    "date": "2017-06",
-    "title": "Climate mitigation from vegetation biophysical feedbacks published in Nature Climate Change",
-    "titleCn": "植被生物物理反馈的气候减缓效应研究发表于 Nature Climate Change",
-    "summary": "Our study in Nature Climate Change shows that global greening has slowed down the rise in global land-surface air temperature by 0.09 ± 0.02 °C since 1982.",
-    "summaryCn": "我们发表于 Nature Climate Change 的研究表明，自1982年以来全球变绿已减缓全球地表气温上升0.09 ± 0.02 °C。",
-    "image": "/images/news/vegetation_feedbacks.jpg",
-    "link": "https://doi.org/10.1038/nclimate3299"
-  }
-]
+{
+  "news": [
+    {
+      "id": 1,
+      "date": "2025-11",
+      "title": "Increasing extreme winds challenge offshore wind power resilience",
+      "titleCn": "极端风速加剧挑战海上风电韧性",
+      "summary": "Our study published in Nature Communications reveals that extreme wind speeds are increasing in over 60% of global coastal regions, challenging the structural safety of offshore wind turbines in Asia and Europe.",
+      "summaryCn": "我们发表于 Nature Communications 的研究揭示了全球超过60%的沿海区域极端风速呈显著上升趋势，亚洲与欧洲超过半数的海上风电场正面临日益加剧的极端风况挑战。",
+      "image": "",
+      "link": "https://doi.org/10.1038/s41467-025-61586-7"
+    },
+    {
+      "id": 2,
+      "date": "2025-10",
+      "title": "Vegetation cover change as a growing driver of global greening",
+      "titleCn": "土地覆盖变化正成为全球变绿的重要推手",
+      "summary": "Our study published in Nature Communications quantifies the contribution of vegetation cover change to global LAI dynamics over the past four decades, revealing it as an increasingly important driver of global greening.",
+      "summaryCn": "我们发表于 Nature Communications 的研究定量分离了过去四十年植被覆盖变化对叶面积指数动态的贡献，揭示了植被覆盖变化正日益成为驱动「全球变绿」的重要因素。",
+      "image": "",
+      "link": "https://doi.org/10.1038/s41467-025-64305-1"
+    },
+    {
+      "id": 3,
+      "date": "2025-07",
+      "title": "Record-breaking 2023 marine heatwaves published in Science",
+      "titleCn": "2023年破纪录的海洋热浪研究发表于 Science",
+      "summary": "Our research on record-breaking 2023 marine heatwaves, published in Science, reveals that global marine heatwave activity reached unprecedented levels, with events in the North Atlantic and Southwest Pacific exceeding 100-year return periods.",
+      "summaryCn": "我们发表于 Science 的研究揭示了2023年全球海洋热浪活动强度创历史纪录，北大西洋和西南太平洋分别发生了276年一遇和141年一遇的极端事件。",
+      "image": "",
+      "link": "https://doi.org/10.1126/science.adr0910"
+    },
+    {
+      "id": 4,
+      "date": "2025-04",
+      "title": "Climate mitigation potential for targeted forestation published in Science Advances",
+      "titleCn": "针对性造林的气候减缓潜力研究发表于 Science Advances",
+      "summary": "Our study in Science Advances evaluates the climate mitigation potential of targeted forestation after considering climate change, fires, and albedo effects.",
+      "summaryCn": "我们发表于 Science Advances 的研究在考虑气候变化、火灾和反照率效应后，评估了针对性造林的气候减缓潜力。",
+      "image": "",
+      "link": "https://doi.org/10.1126/sciadv.adn7915"
+    },
+    {
+      "id": 5,
+      "date": "2025-03",
+      "title": "Impact of Amazonian deforestation on precipitation reverses between seasons",
+      "titleCn": "亚马逊森林砍伐对降水的影响在季节间逆转",
+      "summary": "Our study published in Nature reveals that the impact of Amazonian deforestation on precipitation reverses between wet and dry seasons, providing critical insights for conservation policy.",
+      "summaryCn": "我们发表于 Nature 的研究首次揭示了亚马逊森林砍伐对降水的影响在旱季和雨季之间逆转，从水汽来源角度阐释了毁林-降水关系的季节性机制。",
+      "image": "/images/news/amazon_deforestation.png",
+      "link": "https://doi.org/10.1038/s41586-024-08570-y"
+    },
+    {
+      "id": 6,
+      "date": "2025-02",
+      "title": "Asymmetric sensitivity of boreal forest resilience published in Nature Ecology & Evolution",
+      "titleCn": "北方森林恢复力的不对称敏感性研究发表于 Nature Ecology & Evolution",
+      "summary": "Our research reveals asymmetric sensitivity of boreal forest resilience to forest gain and loss, published in Nature Ecology & Evolution.",
+      "summaryCn": "我们的研究揭示了北方森林恢复力对森林增加和减少的不对称敏感性，发表于 Nature Ecology & Evolution。",
+      "image": "/images/news/boreal_resilience.png",
+      "link": "https://doi.org/10.1038/s41559-024-02631-1"
+    },
+    {
+      "id": 7,
+      "date": "2024-11",
+      "title": "Prof. Zeng selected as 2024 Highly Cited Researcher",
+      "titleCn": "曾老师入选2024年度全球高被引科学家",
+      "summary": "Professor Zhenzhong Zeng was selected as a 2024 Highly Cited Researcher by Clarivate Analytics, recognizing his exceptional research influence.",
+      "summaryCn": "曾振中教授入选科睿唯安2024年度全球「高被引科学家」名单，连续多年获此殊荣。",
+      "image": "",
+      "link": "https://ese.sustech.edu.cn/wap/content/index/nid/31/id/1956.html"
+    },
+    {
+      "id": 8,
+      "date": "2024-05",
+      "title": "Extreme climate sparks record boreal wildfires and carbon surge in 2023",
+      "titleCn": "极端气候引发2023年破纪录的北方野火和碳激增",
+      "summary": "Our study published in The Innovation documents how extreme climate conditions sparked record boreal wildfires and a carbon surge in 2023.",
+      "summaryCn": "我们发表于 The Innovation 的研究记录了极端气候条件如何引发2023年破纪录的北方野火和碳激增。",
+      "image": "",
+      "link": "https://doi.org/10.1016/j.xinn.2024.100631"
+    },
+    {
+      "id": 9,
+      "date": "2024-04",
+      "title": "Urgent need to improve modelled sensitivity of evaporation to vegetation change",
+      "titleCn": "迫切需要改进蒸发对植被变化敏感性的模拟",
+      "summary": "Published in Nature Water, this study highlights the urgent need to improve how Earth system models represent the sensitivity of evaporation to vegetation change.",
+      "summaryCn": "发表于 Nature Water 的本研究强调了迫切需要改进地球系统模型对蒸发对植被变化敏感性的表征。",
+      "image": "/images/news/evaporation_sensitivity.png",
+      "link": "https://doi.org/10.1038/s44221-024-00203-y"
+    },
+    {
+      "id": 10,
+      "date": "2024-01",
+      "title": "AI-based global evapotranspiration dataset constructed with Prof. Liu Jiang",
+      "titleCn": "曾振中、刘江团队合作构建全球陆地蒸散发数据集",
+      "summary": "Our team collaborated with Prof. Liu Jiang's group to construct a new global land evapotranspiration dataset (HG-Land) using Deep Forest AI algorithm and FLUXNET observations.",
+      "summaryCn": "曾振中团队联合刘江团队利用深度森林人工智能算法和全球长期通量观测网络数据，构建了全球陆地蒸散发数据集HG-Land。",
+      "image": "",
+      "link": "https://osrp.sustech.edu.cn/news/1427.html"
+    },
+    {
+      "id": 11,
+      "date": "2023-12",
+      "title": "Prof. Zeng selected as Changjiang Distinguished Professor",
+      "titleCn": "曾老师入选长江学者特聘教授",
+      "summary": "Professor Zhenzhong Zeng was selected for the Changjiang Distinguished Professor award in Earth System Science by the Ministry of Education of China.",
+      "summaryCn": "曾振中教授入选教育部长江学者特聘教授（地球系统科学）。",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": 12,
+      "date": "2023-03",
+      "title": "Accelerating global mountain forest loss threatens biodiversity hotspots",
+      "titleCn": "山地毁林正严重威胁全球生物多样性热点",
+      "summary": "Our study published in One Earth reveals that global mountain forest loss has accelerated since the 21st century, threatening biodiversity hotspots worldwide.",
+      "summaryCn": "我们发表于 One Earth 的研究首次评估了全球山地森林损失的格局及其对生物多样性的影响，揭示了全球山地毁林自21世纪以来呈加速增加趋势。",
+      "image": "",
+      "link": "https://doi.org/10.1016/j.oneear.2023.03.001"
+    },
+    {
+      "id": 13,
+      "date": "2023-03",
+      "title": "Energy production and water savings from floating solar on global reservoirs",
+      "titleCn": "全球水库浮式光伏发电与节水潜力评估",
+      "summary": "Our study in Nature Sustainability estimates the energy production and water savings potential of floating solar photovoltaics on over 110,000 global reservoirs.",
+      "summaryCn": "我们发表于 Nature Sustainability 的研究评估了全球11万个水库上铺设浮式光伏的发电和节水潜力。",
+      "image": "",
+      "link": "https://doi.org/10.1038/s41893-023-00657-y"
+    },
+    {
+      "id": 14,
+      "date": "2023-03",
+      "title": "Forest restoration potential in China for carbon capture",
+      "titleCn": "评估中国森林恢复的碳捕获潜力",
+      "summary": "Our study in Journal of Remote Sensing uses machine learning to evaluate China's forest restoration potential and its implications for carbon capture.",
+      "summaryCn": "我们发表于 Journal of Remote Sensing 的研究利用机器学习模型评估了中国森林覆盖率潜力及碳捕获能力。",
+      "image": "",
+      "link": "https://doi.org/10.34133/remotesensing.0014"
+    },
+    {
+      "id": 15,
+      "date": "2023-02",
+      "title": "A global-scale framework for hydropower development incorporating strict environmental constraints",
+      "titleCn": "严格环境约束下的全球经济可开发水能潜力评估",
+      "summary": "Our study in Nature Water constructs a quantitative assessment framework for hydropower development potential under strict environmental constraints across 2.89 million global rivers.",
+      "summaryCn": "我们发表于 Nature Water 的研究构建了严格环境约束条件下的定量评估框架，对全球289万条河流进行水电开发经济潜力评估。",
+      "image": "",
+      "link": "https://doi.org/10.1038/s44221-023-00020-x"
+    },
+    {
+      "id": 16,
+      "date": "2022-12",
+      "title": "Prof. Zeng selected as 2022 Highly Cited Researcher",
+      "titleCn": "曾老师入选2022年度全球高被引科学家",
+      "summary": "Professor Zhenzhong Zeng was selected as a 2022 Highly Cited Researcher by Clarivate Analytics for the third consecutive year.",
+      "summaryCn": "曾振中教授连续第三年入选科睿唯安全球「高被引科学家」名单。",
+      "image": "",
+      "link": "https://ese.sustech.edu.cn/wap/content/index/nid/63/id/2862.html"
+    },
+    {
+      "id": 17,
+      "date": "2022-10",
+      "title": "AI reconstruction of global gridded surface winds published in Science Bulletin",
+      "titleCn": "利用AI构建全球风速数据集发表于 Science Bulletin",
+      "summary": "Our team collaborated with Prof. Liu Jiang to develop an AI-based reconstruction of global gridded surface winds, published in Science Bulletin.",
+      "summaryCn": "曾振中团队联合刘江团队在 Science Bulletin 发表利用人工智能构建全球风速数据集的研究成果。",
+      "image": "",
+      "link": "https://doi.org/10.1016/j.scib.2022.10.004"
+    },
+    {
+      "id": 18,
+      "date": "2022-09",
+      "title": "MJO-induced extreme rainfalls constrained by global warming mitigation",
+      "titleCn": "全球变暖减缓可约束MJO引发的热带极端降水",
+      "summary": "Our study published in npj Climate and Atmospheric Science reveals how global warming mitigation can constrain MJO-induced extreme rainfall events in the tropics.",
+      "summaryCn": "我们发表于 npj Climate and Atmospheric Science 的研究揭示了全球变暖减缓对MJO引发的热带极端降水的约束作用。",
+      "image": "",
+      "link": "https://doi.org/10.1038/s41612-022-00255-4"
+    },
+    {
+      "id": 19,
+      "date": "2022-08",
+      "title": "Rewetting global wetlands effectively reduces major greenhouse gas emissions",
+      "titleCn": "全球湿地再湿润可有效减少主要温室气体排放",
+      "summary": "Our study published in Nature Geoscience reveals that rewetting global wetlands effectively reduces major greenhouse gas emissions, exploring nonlinear hydrothermal exchange patterns.",
+      "summaryCn": "我们发表于 Nature Geoscience 的研究探究了全球湿地温室气体交换的水热非线性模式，揭示再湿润可有效减少主要温室气体排放。",
+      "image": "",
+      "link": "https://doi.org/10.1038/s41561-022-00982-0"
+    },
+    {
+      "id": 20,
+      "date": "2022-08",
+      "title": "Prof. Zeng received AOGS HS Kamide Lecture Award",
+      "titleCn": "曾老师获AOGS HS鹰见讲座奖",
+      "summary": "Professor Zeng received the Kamide Lecture Award at the 19th Asia Oceania Geosciences Society (AOGS) annual meeting, presenting his research progress in ecohydrology and Earth system modeling.",
+      "summaryCn": "曾振中教授在第19届亚洲大洋洲地球科学学会（AOGS）年会上获得鹰见讲座奖，并作大会特邀报告。",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": 21,
+      "date": "2022-05",
+      "title": "Doubling of annual forest carbon loss over the tropics published in Nature Sustainability",
+      "titleCn": "热带年度森林碳损失翻倍研究发表于 Nature Sustainability",
+      "summary": "Our study published in Nature Sustainability (Cover) reveals that annual forest carbon loss over the tropics has doubled during the early twenty-first century.",
+      "summaryCn": "我们发表于 Nature Sustainability（封面）的研究揭示了21世纪初热带地区年度森林碳损失已经翻倍。",
+      "image": "/images/news/forest_carbon_loss.png",
+      "link": "https://doi.org/10.1038/s41893-022-00854-3"
+    },
+    {
+      "id": 22,
+      "date": "2021-11",
+      "title": "Prof. Zeng selected as 2021 Highly Cited Researcher",
+      "titleCn": "曾老师入选2021年度全球高被引科学家",
+      "summary": "Professor Zhenzhong Zeng was selected as a 2021 Highly Cited Researcher by Clarivate Analytics for the second consecutive year.",
+      "summaryCn": "曾振中教授连续第二年入选科睿唯安全球「高被引科学家」名单。",
+      "image": "",
+      "link": "https://osrp.sustech.edu.cn/news/798.html"
+    },
+    {
+      "id": 23,
+      "date": "2020-11",
+      "title": "Prof. Zeng selected as 2020 Highly Cited Researcher",
+      "titleCn": "曾老师入选2020年度全球高被引科学家",
+      "summary": "Professor Zhenzhong Zeng was selected as a 2020 Highly Cited Researcher by Clarivate Analytics, recognizing his exceptional research influence across disciplines.",
+      "summaryCn": "曾振中教授入选科睿唯安2020年度全球「高被引科学家」名单，认可其在交叉学科领域的卓越研究影响力。",
+      "image": "",
+      "link": "https://osrp.sustech.edu.cn/news/615.html"
+    },
+    {
+      "id": 24,
+      "date": "2020-10",
+      "title": "Prof. Zeng received Qiushi Outstanding Young Scholar Award",
+      "titleCn": "曾老师获求是杰出青年学者奖",
+      "summary": "Professor Zhenzhong Zeng received the prestigious Qiushi Outstanding Young Scholar Award.",
+      "summaryCn": "曾振中教授荣获求是杰出青年学者奖。",
+      "image": "",
+      "link": ""
+    },
+    {
+      "id": 25,
+      "date": "2019-12",
+      "title": "A reversal in global terrestrial stilling published in Nature Climate Change",
+      "titleCn": "全球陆地风速静止逆转研究发表于 Nature Climate Change",
+      "summary": "Our study published in Nature Climate Change reveals a reversal in global terrestrial stilling and its implications for wind energy production.",
+      "summaryCn": "我们发表于 Nature Climate Change 的研究揭示了全球陆地风速静止的逆转及其对风能产量的影响。",
+      "image": "/images/news/terrestrial_stilling.png",
+      "link": "https://doi.org/10.1038/s41558-019-0622-6"
+    },
+    {
+      "id": 26,
+      "date": "2018-08",
+      "title": "Highland cropland expansion and forest loss in Southeast Asia published in Nature Geoscience",
+      "titleCn": "东南亚高地农田扩张与森林损失研究发表于 Nature Geoscience",
+      "summary": "Our study in Nature Geoscience documents large increases in cultivated areas in Southeast Asian highlands that have evolved from forests.",
+      "summaryCn": "我们发表于 Nature Geoscience 的研究记录了东南亚高地耕种面积的大幅增加，这些区域由森林演变而来。",
+      "image": "/images/news/highland_cropland.jpg",
+      "link": "https://doi.org/10.1038/s41561-018-0166-9"
+    },
+    {
+      "id": 27,
+      "date": "2017-06",
+      "title": "Climate mitigation from vegetation biophysical feedbacks published in Nature Climate Change",
+      "titleCn": "植被生物物理反馈的气候减缓效应研究发表于 Nature Climate Change",
+      "summary": "Our study in Nature Climate Change shows that global greening has slowed down the rise in global land-surface air temperature by 0.09 ± 0.02 °C since 1982.",
+      "summaryCn": "我们发表于 Nature Climate Change 的研究表明，自1982年以来全球变绿已减缓全球地表气温上升0.09 ± 0.02 °C。",
+      "image": "/images/news/vegetation_feedbacks.jpg",
+      "link": "https://doi.org/10.1038/nclimate3299"
+    }
+  ]
+}

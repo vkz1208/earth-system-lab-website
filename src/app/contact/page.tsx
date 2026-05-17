@@ -2,6 +2,7 @@
 
 import PageHero from '@/components/PageHero';
 import { useLanguage } from '@/components/LanguageContext';
+import { team as teamData } from '@/data';
 import { MapPin, Mail, Phone, Globe } from 'lucide-react';
 
 export default function ContactPage() {
@@ -33,17 +34,17 @@ export default function ContactPage() {
             <Mail size={20} strokeWidth={1.5} className="text-earth-green mb-3" />
             <p className="text-sm text-neutral-text font-medium">{t('contact.email')}</p>
             <a
-              href="mailto:zengbb@mail.sustech.edu.cn"
+              href={`mailto:${teamData.pi.email}`}
               className="text-sm text-earth-green-deep hover:text-earth-green transition-colors mt-1 inline-block"
             >
-              zengbb@mail.sustech.edu.cn
+              {teamData.pi.email}
             </a>
           </div>
 
           <div className="p-5 rounded-card border border-neutral-gray bg-white">
             <Phone size={20} strokeWidth={1.5} className="text-earth-green mb-3" />
             <p className="text-sm text-neutral-text font-medium">{t('contact.phone')}</p>
-            <p className="text-sm text-neutral-text-secondary mt-1">0755-88018873</p>
+            <p className="text-sm text-neutral-text-secondary mt-1">{teamData.pi.phone}</p>
           </div>
 
           <div className="p-5 rounded-card border border-neutral-gray bg-white">
@@ -78,7 +79,7 @@ export default function ContactPage() {
               </div>
             </div>
             <a
-              href="mailto:zengbb@mail.sustech.edu.cn"
+              href={`mailto:${teamData.pi.email}`}
               className="inline-block px-5 py-2.5 bg-earth-green-deep text-white text-sm rounded-card hover:bg-earth-green transition-colors shrink-0"
             >
               {t('contact.applyNow')}

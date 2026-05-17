@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { useLanguage } from './LanguageContext';
+import { team } from '@/data';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -30,10 +30,10 @@ export default function Footer() {
               <p>{t('footer.address2')}</p>
               <p>
                 <a
-                  href="mailto:zengzz@sustech.edu.cn"
+                  href={`mailto:${team.pi.email}`}
                   className="hover:text-earth-green-soft transition-colors"
                 >
-                  zengzz@sustech.edu.cn
+                  {team.pi.email}
                 </a>
               </p>
             </address>

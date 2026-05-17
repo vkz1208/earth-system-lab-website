@@ -68,6 +68,9 @@ const translations: Record<Lang, Record<string, string>> = {
     'papers.search': 'Search by title, author, or journal...',
     'papers.allYears': 'All Years',
     'papers.count': 'paper(s) found',
+    'papers.journalCategory': 'Journal Category',
+    'papers.year': 'Year',
+    'papers.researchDirection': 'Research Direction',
 
     // Team
     'team.title': 'Team',
@@ -82,11 +85,15 @@ const translations: Record<Lang, Record<string, string>> = {
     'team.joinDesc': 'We are looking for passionate new Postdocs, PhD students, Master students, and Undergraduate students to join the team.',
     'team.contactUs': 'Contact Us',
     'team.started': 'Started',
+    'team.formerRole': 'Former Role',
+    'team.currentPosition': 'Current Position',
 
     // News
     'news.title': 'News',
     'news.subtitle': 'Latest updates, publications, and highlights from our research group.',
     'news.readMore': 'Read more',
+    'news.allYears': 'All',
+    'news.newsCount': 'item(s)',
 
     // Contact
     'contact.title': 'Contact Us',
@@ -164,6 +171,9 @@ const translations: Record<Lang, Record<string, string>> = {
     'papers.search': '按标题、作者或期刊搜索...',
     'papers.allYears': '全部年份',
     'papers.count': '篇论文',
+    'papers.journalCategory': '期刊类别',
+    'papers.year': '年份',
+    'papers.researchDirection': '研究方向',
 
     // Team
     'team.title': '团队',
@@ -178,11 +188,15 @@ const translations: Record<Lang, Record<string, string>> = {
     'team.joinDesc': '我们正在招聘博士后、博士研究生、硕士研究生和本科生加入团队。',
     'team.contactUs': '联系我们',
     'team.started': '入职时间',
+    'team.formerRole': '离开时角色',
+    'team.currentPosition': '去向',
 
     // News
     'news.title': '新闻动态',
     'news.subtitle': '来自我们研究组的最新消息、发表论文和亮点。',
     'news.readMore': '阅读更多',
+    'news.allYears': '全部',
+    'news.newsCount': '条',
 
     // Contact
     'contact.title': '联系我们',
@@ -234,4 +248,31 @@ export function useLanguage() {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;
+}
+
+/** Localize a field from a typed object, falling back to the base field if Cn variant is missing */
+export function localizeField<
+  T extends Record<string, any>,
+  K extends string & keyof T
+>(obj: T, field: K, lang: Lang): string {
+  if (lang === 'zh') {
+    const cnKey = `${field}Cn` as keyof T;
+    const cnVal = obj[cnKey];
+    if (typeof cnVal === 'string' && cnVal) return cnVal;
+    // Fallback: array of strings (e.g. educationCn)
+    if (Array.isArray(cnVal) && cnVal.length > 0) return cnVal as unknown as string;
+    return String(obj[field] ?? '');
+  }
+  return String(obj[field] ?? '');
+}
+
+/** Localize a simple en/zh string pair */
+export function localize(en: string, zh: string, lang: Lang): string {
+  return lang === 'zh' ? zh : en;
+}
+
+/** Localize an en/zh array pair (e.g. education / educationCn) */
+export function localizeArray(en: string[], zh: string[] | undefined, lang: Lang): string[] {
+  if (lang === 'zh' && zh && zh.length > 0) return zh;
+  return en;
 }

@@ -1,26 +1,30 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Image from 'next/image';
 import PageHero from '@/components/PageHero';
 import SectionTitle from '@/components/SectionTitle';
 import Badge from '@/components/Badge';
 import { useLanguage } from '@/components/LanguageContext';
-import papers from '@/data/papers.json';
+import {
+  journalCategories,
+  journalCategoriesCn,
+  journalCategoriesEn,
+  researchDirections,
+  researchDirectionsCn,
+  researchDirectionsEn,
+} from '@/config';
+import papersJson from '@/data/papers.json';
+import { team as teamData } from '@/data';
 import { ExternalLink } from 'lucide-react';
 
-const categories = ['All', 'Nature/Science', 'Environmental Science', 'Energy', 'Earth System Science'];
-const categoriesCn: Record<string, string> = {
-  'All': '全部',
-  'Nature/Science': 'Nature/Science',
-  'Environmental Science': '环境科学',
-  'Energy': '能源',
-  'Earth System Science': '地球系统科学',
-};
+const papers = papersJson.papers;
 
 export default function PapersPage() {
   const { lang, t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeJournalCategory, setActiveJournalCategory] = useState('All');
   const [activeYear, setActiveYear] = useState<number | null>(null);
+  const [activeDirection, setActiveDirection] = useState('All');
   const [search, setSearch] = useState('');
 
   const years = useMemo(() => {
@@ -36,8 +40,9 @@ export default function PapersPage() {
 
   const filteredPapers = useMemo(() => {
     return papers.filter((p) => {
-      if (activeCategory !== 'All' && p.category !== activeCategory) return false;
+      if (activeJournalCategory !== 'All' && p.journalCategory !== activeJournalCategory) return false;
       if (activeYear !== null && p.year !== activeYear) return false;
+      if (activeDirection !== 'All' && !p.researchDirections.includes(activeDirection)) return false;
       if (search) {
         const q = search.toLowerCase();
         return (
@@ -48,7 +53,10 @@ export default function PapersPage() {
       }
       return true;
     });
-  }, [activeCategory, activeYear, search]);
+  }, [activeJournalCategory, activeYear, activeDirection, search]);
+
+  const dirLabel = (dir: string) =>
+    lang === 'zh' ? researchDirectionsCn[dir] || dir : researchDirectionsEn[dir] || dir;
 
   return (
     <>
@@ -61,10 +69,10 @@ export default function PapersPage() {
       <section className="section-container pb-12 md:pb-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
-            { value: '24,795', labelEn: 'Citations', labelCn: '引用次数' },
-            { value: '64', labelEn: 'H-index', labelCn: 'H指数' },
-            { value: '160', labelEn: 'i10-index', labelCn: 'i10指数' },
-            { value: '150+', labelEn: 'Publications', labelCn: '发表论文' },
+            { value: teamData.pi.scholarStats.citations, labelEn: 'Citations', labelCn: '引用次数' },
+            { value: teamData.pi.scholarStats.hIndex, labelEn: 'H-index', labelCn: 'H指数' },
+            { value: teamData.pi.scholarStats.i10Index, labelEn: 'i10-index', labelCn: 'i10指数' },
+            { value: teamData.pi.scholarStats.publications, labelEn: 'Publications', labelCn: '发表论文' },
           ].map((stat, i) => (
             <div
               key={i}
@@ -78,7 +86,9 @@ export default function PapersPage() {
           ))}
         </div>
         <p className="mt-3 text-xs text-neutral-text-secondary text-right">
-          {lang === 'zh' ? '数据截至 2026年5月 · Google Scholar' : 'As of May 2026 · Google Scholar'}
+          {lang === 'zh'
+            ? `数据截至 ${teamData.pi.scholarStats.asOf.replace('-', '年')}月 · Google Scholar`
+            : `As of ${new Date(teamData.pi.scholarStats.asOf + '-01').toLocaleDateString('en', { month: 'long', year: 'numeric' })} · Google Scholar`}
         </p>
       </section>
 
@@ -89,32 +99,53 @@ export default function PapersPage() {
           {selectedPapers.slice(0, 10).map((paper) => (
             <div
               key={paper.id}
-              className="p-5 rounded-card border border-neutral-gray bg-white"
+              className="flex gap-4 p-5 rounded-card border border-neutral-gray bg-white hover:shadow-md transition-shadow"
             >
-              <h3 className="text-base text-neutral-text leading-snug">
-                {paper.title}
-              </h3>
-              <p className="text-sm text-neutral-text-secondary mt-2 leading-relaxed">
-                {paper.authors}
-              </p>
-              <div className="mt-2 flex flex-wrap items-center gap-2">
-                <span className="text-sm text-earth-green font-normal">
-                  {paper.journal}
-                </span>
-                <span className="text-xs text-neutral-text-secondary">
-                  ({paper.year})
-                </span>
-                {paper.doi && (
-                  <a
-                    href={`https://doi.org/${paper.doi}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs text-earth-green-deep hover:text-earth-green transition-colors ml-auto"
-                  >
-                    <ExternalLink size={12} strokeWidth={1.5} />
-                    DOI
-                  </a>
-                )}
+              {/* Left: Paper Image */}
+              <div className="flex-shrink-0 w-28 md:w-36 aspect-[4/3] rounded-lg overflow-hidden bg-neutral-gray/30">
+                <Image
+                  src={paper.image || '/images/placeholder_paper.svg'}
+                  alt={paper.title}
+                  width={144}
+                  height={108}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Right: Paper Info */}
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-semibold text-neutral-text leading-snug">
+                  {paper.title}
+                </h3>
+                <p className="text-xs text-neutral-text-secondary mt-2 leading-relaxed line-clamp-2">
+                  {paper.authors}
+                </p>
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <span className="text-sm text-earth-green font-normal">
+                    {paper.journal}
+                  </span>
+                  <span className="text-xs text-neutral-text-secondary">
+                    ({paper.year})
+                  </span>
+                  {paper.researchDirections.map((dir) => (
+                    <span
+                      key={dir}
+                      className="inline-block px-2 py-0.5 text-[10px] rounded-full bg-earth-green-soft/20 text-earth-green-deep border border-earth-green-soft/30"
+                    >
+                      {dirLabel(dir)}
+                    </span>
+                  ))}
+                  {paper.doi && (
+                    <a
+                      href={`https://doi.org/${paper.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-earth-green-deep hover:text-earth-green transition-colors ml-auto"
+                    >
+                      <ExternalLink size={12} strokeWidth={1.5} />
+                      DOI
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
@@ -135,31 +166,61 @@ export default function PapersPage() {
             className="w-full max-w-md px-4 py-2 text-sm border border-neutral-gray rounded-card bg-white focus:outline-none focus:border-earth-green"
           />
 
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <Badge
-                key={cat}
-                active={activeCategory === cat}
-                onClick={() => setActiveCategory(cat)}
-              >
-                {lang === 'zh' ? categoriesCn[cat] || cat : cat}
-              </Badge>
-            ))}
+          {/* Journal Category Filter */}
+          <div>
+            <p className="text-xs font-medium text-neutral-text-secondary mb-2">
+              {t('papers.journalCategory')}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {journalCategories.map((cat) => (
+                <Badge
+                  key={cat}
+                  active={activeJournalCategory === cat}
+                  onClick={() => setActiveJournalCategory(cat)}
+                >
+                  {lang === 'zh' ? journalCategoriesCn[cat] || cat : journalCategoriesEn[cat] || cat}
+                </Badge>
+              ))}
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            <Badge active={activeYear === null} onClick={() => setActiveYear(null)}>
-              {t('papers.allYears')}
-            </Badge>
-            {years.map((y) => (
-              <Badge
-                key={y}
-                active={activeYear === y}
-                onClick={() => setActiveYear(y)}
-              >
-                {y}
+          {/* Year Filter */}
+          <div>
+            <p className="text-xs font-medium text-neutral-text-secondary mb-2">
+              {t('papers.year')}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge active={activeYear === null} onClick={() => setActiveYear(null)}>
+                {t('papers.allYears')}
               </Badge>
-            ))}
+              {years.map((y) => (
+                <Badge
+                  key={y}
+                  active={activeYear === y}
+                  onClick={() => setActiveYear(y)}
+                >
+                  {y}
+                </Badge>
+              ))}
+            </div>
+          </div>
+
+          {/* Research Direction Filter */}
+          <div>
+            <p className="text-xs font-medium text-neutral-text-secondary mb-2">
+              {t('papers.researchDirection')}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {researchDirections.map((dir) => (
+                <Badge
+                  key={dir}
+                  active={activeDirection === dir}
+                  onClick={() => setActiveDirection(dir)}
+                >
+                  {lang === 'zh' ? researchDirectionsCn[dir] || dir : researchDirectionsEn[dir] || dir}
+                </Badge>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -173,22 +234,30 @@ export default function PapersPage() {
           {filteredPapers.map((paper) => (
             <div
               key={paper.id}
-              className="p-4 rounded-card border border-neutral-gray bg-white"
+              className="p-4 rounded-card border border-neutral-gray bg-white hover:shadow-sm transition-shadow"
             >
-              <h3 className="text-sm text-neutral-text leading-snug">
+              <h3 className="text-sm font-semibold text-neutral-text leading-snug">
                 {paper.title}
               </h3>
-              <p className="text-xs text-neutral-text-secondary mt-1.5 leading-relaxed">
+              <p className="text-xs text-neutral-text-secondary/70 mt-1.5 leading-relaxed line-clamp-1">
                 {paper.authors}
               </p>
               <div className="mt-1.5 flex flex-wrap items-center gap-2">
-                <span className="text-xs text-earth-green">{paper.journal}</span>
-                <span className="text-xs text-neutral-text-secondary">
+                <span className="text-xs text-earth-green/80">{paper.journal}</span>
+                <span className="text-xs text-neutral-text-secondary/60">
                   ({paper.year})
                 </span>
                 {paper.isCorresponding && (
                   <span className="text-xs text-earth-green-soft">*</span>
                 )}
+                {paper.researchDirections.map((dir) => (
+                  <span
+                    key={dir}
+                    className="inline-block px-1.5 py-0.5 text-[10px] rounded-full bg-earth-green-soft/15 text-earth-green-deep/80 border border-earth-green-soft/20"
+                  >
+                    {dirLabel(dir)}
+                  </span>
+                ))}
                 {paper.doi && (
                   <a
                     href={`https://doi.org/${paper.doi}`}

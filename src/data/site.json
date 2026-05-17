@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "tagline": "SUSTech · School of Environmental Science and Engineering",
+    "taglineCn": "SUSTech · 环境科学与工程学院",
+    "title": "Earth System &\nGlobal Change Lab",
+    "titleCn": "地球系统\n与全球变化实验室",
+    "subtitle": "Understanding Earth · Addressing Change · Towards Sustainability",
+    "subtitleCn": "理解地球 · 应对变化 · 走向可持续",
+    "quote": "We are driven by creativity and curiosity to push back the frontiers of knowledge.",
+    "quoteCn": "我们被创造力和好奇心驱动，不断推进知识的边界。"
+  },
+  "philosophy": {
+    "paragraph1": "Turing was interested in the chemistry of morphogenesis, in how the egg becomes the organism. He was also interested in machines that could think. He died at 41, left his theory of morphogenesis.",
+    "paragraph1Cn": "图灵对形态发生的化学原理感兴趣——卵子如何变成有机体。他也对能思考的机器感兴趣。他41岁去世，留下了形态发生理论。",
+    "paragraph2": "Von Neumann was interested in how the brain works, and in self-reproducing machines. He died at 53, left an unfinished theory of self-reproduction.",
+    "paragraph2Cn": "冯·诺伊曼对大脑的工作原理感兴趣，对自我复制机器感兴趣。他53岁去世，留下了一个未完成的自复制理论。",
+    "question": "So, what do you want,\nand what will you leave?",
+    "questionCn": "那么，你想要什么，\n又将留下什么？"
+  }
+}

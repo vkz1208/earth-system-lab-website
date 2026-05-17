@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Content Manager | Earth System Lab</title>
+  <script>
+    // 处理 OAuth 回调重定向回来的 token
+    (function() {
+      var hash = window.location.hash;
+      if (hash && hash.indexOf('token=') !== -1) {
+        var match = hash.match(/token=([^&]+)/);
+        if (match) {
+          var token = decodeURIComponent(match[1]);
+          try {
+            localStorage.setItem('sveltia-cms-user', JSON.stringify({token: token}));
+            localStorage.setItem('netlify-cms-user', JSON.stringify({token: token}));
+          } catch(e) {}
+          window.location.hash = '';
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+</body>
+</html>

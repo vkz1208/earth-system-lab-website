@@ -7,9 +7,9 @@ import { useLanguage } from './LanguageContext';
 
 const navLinkKeys = [
   { href: '/', key: 'nav.home' },
-  { href: '/research', key: 'nav.research' },
-  { href: '/papers', key: 'nav.papers' },
   { href: '/team', key: 'nav.team' },
+  { href: '/papers', key: 'nav.papers' },
+  { href: '/research', key: 'nav.research' },
   { href: '/news', key: 'nav.news' },
   { href: '/contact', key: 'nav.contact' },
 ];
