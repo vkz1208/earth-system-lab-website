@@ -1,10 +1,14 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { useLanguage } from './LanguageContext';
 import { team } from '@/data';
 
 export default function Footer() {
+  const pathname = usePathname();
   const { t } = useLanguage();
+
+  if (pathname.startsWith('/admin')) return null;
 
   return (
     <footer className="bg-earth-green-deep">

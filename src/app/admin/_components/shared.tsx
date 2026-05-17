@@ -24,7 +24,7 @@ export const memberFields: FieldDef[] = [
   { name: 'education', label: '教育经历（英文）', type: 'text' },
   { name: 'educationCn', label: '教育经历（中文）', type: 'text' },
   { name: 'started', label: '入职/入学时间', type: 'text', hint: '如 Sep 2023' },
-  { name: 'photo', label: '照片路径', type: 'text', placeholder: '/images/team/xxx.jpg' },
+  { name: 'photo', label: '照片', type: 'image', uploadDir: 'team' },
 ];
 
 export const piFields: FieldDef[] = [
@@ -35,7 +35,7 @@ export const piFields: FieldDef[] = [
   { name: 'titleCn', label: '中文头衔', type: 'text' },
   { name: 'email', label: '邮箱', type: 'text' },
   { name: 'phone', label: '电话', type: 'text' },
-  { name: 'photo', label: '照片路径', type: 'text' },
+  { name: 'photo', label: '照片', type: 'image', uploadDir: 'team' },
   { name: 'education', label: '教育经历（英文）', type: 'list', hint: '每行一条' },
   { name: 'educationCn', label: '教育经历（中文）', type: 'list', hint: '每行一条' },
   { name: 'bio', label: '简介（英文）', type: 'textarea', rows: 4 },
@@ -70,7 +70,7 @@ export const paperFields: FieldDef[] = [
     { label: 'Field-Journal (领域期刊)', value: 'Field-Journal' },
   ]},
   { name: 'researchDirections', label: '研究方向', type: 'list', hint: '每行一个方向标识，如 earth-system, energy-transition, ai-climate' },
-  { name: 'image', label: '配图路径', type: 'text', placeholder: '/images/papers/xxx.png' },
+  { name: 'image', label: '配图', type: 'image', uploadDir: 'papers' },
   { name: 'isCorresponding', label: '通讯作者', type: 'boolean', hint: '标记为通讯作者' },
   { name: 'isFirstAuthor', label: '第一作者', type: 'boolean', hint: '标记为第一作者' },
 ];
@@ -81,7 +81,7 @@ export const newsFields: FieldDef[] = [
   { name: 'titleCn', label: '标题（中文）', type: 'text' },
   { name: 'summary', label: '摘要（英文）', type: 'textarea', rows: 3 },
   { name: 'summaryCn', label: '摘要（中文）', type: 'textarea', rows: 3 },
-  { name: 'image', label: '配图路径', type: 'text', placeholder: '/images/news/xxx.png' },
+  { name: 'image', label: '配图', type: 'image', uploadDir: 'news' },
   { name: 'link', label: '链接', type: 'text' },
 ];
 
@@ -146,7 +146,7 @@ export const alumniMemberFields: FieldDef[] = [
   { name: 'roleCn', label: '角色（中文）', type: 'text' },
   { name: 'current', label: '去向（英文）', type: 'text' },
   { name: 'currentCn', label: '去向（中文）', type: 'text' },
-  { name: 'photo', label: '照片路径', type: 'text', placeholder: '/images/team/xxx.jpg' },
+  { name: 'photo', label: '照片', type: 'image', uploadDir: 'team' },
 ];
 
 export const heroFields: FieldDef[] = [

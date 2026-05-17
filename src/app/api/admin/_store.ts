@@ -6,10 +6,15 @@
  *   - 无 token   → fsStore：直接读写本地 src/data/*.json（仅适合本地开发）
  *
  * 环境变量（线上模式）：
- *   GITHUB_TOKEN   GitHub Personal Access Token（需要 repo 写权限）
- *   GITHUB_REPO    格式 "owner/repo"，例如 "zengzz/lab-website"
- *   GITHUB_BRANCH  目标分支，默认 "main"
- *   GITHUB_DATA_DIR  仓库中 JSON 数据相对路径，默认 "src/data"
+ *   GITHUB_TOKEN       GitHub Personal Access Token（需要 repo 写权限）
+ *   GITHUB_REPO        格式 "owner/repo"，例如 "zengzz/lab-website"
+ *   GITHUB_BRANCH      目标分支，默认 "main"
+ *   GITHUB_DATA_DIR    仓库中 JSON 数据相对路径，默认 "src/data"
+ *   DEPLOY_HOOK_URL    Vercel Deploy Hook URL（可选，Git-connected 项目适用）
+ *   VERCEL_TOKEN       Vercel API Token（可选，非 Git-connected 项目适用）
+ *   VERCEL_PROJECT_ID  Vercel 项目 ID（配合 VERCEL_TOKEN 使用）
+ *   VERCEL_TEAM_ID     Vercel 团队 ID（配合 VERCEL_TOKEN 使用）
+ *   VERCEL_REPO_ID     GitHub 仓库数字 ID（配合 VERCEL_TOKEN 使用）
  */
 import fs from 'fs';
 import path from 'path';
@@ -115,8 +120,58 @@ const githubStore: DataStore = {
     if (!putRes.ok) {
       throw new Error(`GitHub write failed (${putRes.status}): ${await putRes.text()}`);
     }
+
+    // 3. 触发 Vercel 重建
+    await triggerRedeploy();
   },
 };
+
+// ─── 触发 Vercel 重建 ──────────────────────────────────────────────────
+async function triggerRedeploy() {
+  // 方案 A：Deploy Hook（Git-connected 项目）
+  const deployHook = process.env.DEPLOY_HOOK_URL;
+  if (deployHook) {
+    try {
+      await fetch(deployHook, { method: 'POST', cache: 'no-store' });
+    } catch {
+      // deploy hook 失败不影响数据保存结果
+    }
+    return;
+  }
+
+  // 方案 B：Vercel API 触发部署（非 Git-connected 项目）
+  const vercelToken = process.env.VERCEL_TOKEN;
+  const vercelProjectId = process.env.VERCEL_PROJECT_ID;
+  if (!vercelToken || !vercelProjectId) return;
+
+  const teamId = process.env.VERCEL_TEAM_ID;
+  const repoId = process.env.VERCEL_REPO_ID;
+  const qs = teamId ? `?teamId=${teamId}` : '';
+
+  try {
+    await fetch(`https://api.vercel.com/v13/deployments${qs}`, {
+      method: 'POST',
+      cache: 'no-store',
+      headers: {
+        'Authorization': `Bearer ${vercelToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: 'earth-system-lab-website',
+        target: 'production',
+        ...(repoId ? {
+          gitSource: {
+            type: 'github',
+            ref: 'main',
+            repoId: parseInt(repoId, 10),
+          },
+        } : {}),
+      }),
+    });
+  } catch {
+    // 重建触发失败不影响数据保存结果
+  }
+}
 
 // ─── 自动选择 ────────────────────────────────────────────────────────
 export function getStore(): DataStore {

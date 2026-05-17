@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { X } from 'lucide-react';
+import { useEffect, useRef, useState, useCallback } from 'react';
+import { X, Upload, Image as ImageIcon, Trash2 } from 'lucide-react';
 
 export interface FieldDef {
   name: string;
   label: string;
-  type: 'text' | 'textarea' | 'select' | 'boolean' | 'number' | 'list';
+  type: 'text' | 'textarea' | 'select' | 'boolean' | 'number' | 'list' | 'image';
   options?: { label: string; value: string }[];
   required?: boolean;
   placeholder?: string;
@@ -14,6 +14,8 @@ export interface FieldDef {
   rows?: number;
   /** For type='list': define sub-fields for each list item. If omitted, items are plain strings. */
   itemFields?: FieldDef[];
+  /** For type='image': subdirectory under public/images/ to upload to (e.g. 'team', 'papers', 'news') */
+  uploadDir?: string;
 }
 
 interface AdminModalProps {
@@ -38,6 +40,39 @@ export default function AdminModal({
   saving,
 }: AdminModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
+  const [uploading, setUploading] = useState<string | null>(null); // field name being uploaded
+  const [uploadError, setUploadError] = useState<string | null>(null);
+
+  // Get auth token for upload
+  const getAuthToken = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      return sessionStorage.getItem('admin_token') || '';
+    }
+    return '';
+  }, []);
+
+  const handleImageUpload = useCallback(async (fieldName: string, subdir: string, file: File) => {
+    setUploading(fieldName);
+    setUploadError(null);
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('subdir', subdir);
+      const token = getAuthToken();
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}` },
+        body: formData,
+      });
+      const json = await res.json();
+      if (!json.success) throw new Error(json.error || 'Upload failed');
+      onChange(fieldName, json.path);
+    } catch (err: any) {
+      setUploadError(err.message || '上传失败');
+    } finally {
+      setUploading(null);
+    }
+  }, [onChange, getAuthToken]);
 
   useEffect(() => {
     if (open) {
@@ -211,6 +246,85 @@ export default function AdminModal({
             >
               + 添加
             </button>
+          </div>
+        );
+      }
+      case 'image': {
+        const imgValue = data[field.name] ?? '';
+        const isUploading = uploading === field.name;
+        const subdir = field.uploadDir || 'misc';
+        return (
+          <div className="space-y-2">
+            {/* Current image preview */}
+            {imgValue && (
+              <div className="relative group/img inline-block">
+                <div className="w-32 h-32 rounded-card overflow-hidden border border-neutral-gray bg-neutral-bg">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={imgValue}
+                    alt="Preview"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onClick={() => onChange(field.name, '')}
+                  className="absolute -top-1.5 -right-1.5 p-0.5 bg-white rounded-full border border-neutral-gray shadow-sm text-neutral-text-secondary hover:text-red-400 transition-colors"
+                  title="移除图片"
+                >
+                  <X size={12} />
+                </button>
+              </div>
+            )}
+            {/* Upload area */}
+            <div className="flex items-center gap-3">
+              <label
+                className={`inline-flex items-center gap-2 px-3 py-2 text-sm border border-dashed border-earth-green-soft/40 rounded-lg cursor-pointer hover:border-earth-green-soft hover:bg-earth-green-glow/20 transition-all ${isUploading ? 'opacity-50 pointer-events-none' : ''}`}
+              >
+                {isUploading ? (
+                  <>
+                    <svg className="animate-spin h-4 w-4 text-earth-green-deep" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                    </svg>
+                    上传中...
+                  </>
+                ) : (
+                  <>
+                    <Upload size={14} className="text-earth-green-deep" />
+                    选择图片
+                  </>
+                )}
+                <input
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml"
+                  className="hidden"
+                  disabled={isUploading}
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) handleImageUpload(field.name, subdir, file);
+                    e.target.value = '';
+                  }}
+                />
+              </label>
+              {!imgValue && (
+                <span className="text-xs text-neutral-text-secondary">或手动输入路径</span>
+              )}
+            </div>
+            {/* Manual path input fallback */}
+            {!imgValue && (
+              <input
+                type="text"
+                value={imgValue}
+                onChange={(e) => onChange(field.name, e.target.value)}
+                placeholder={field.placeholder || '/images/xxx.jpg'}
+                className="w-full px-3 py-2 text-sm border border-neutral-gray rounded-lg bg-white focus:outline-none focus:border-earth-green focus:ring-1 focus:ring-earth-green/20 transition-colors"
+              />
+            )}
+            {/* Upload error */}
+            {uploadError && uploading === field.name && (
+              <p className="text-xs text-red-400">{uploadError}</p>
+            )}
           </div>
         );
       }

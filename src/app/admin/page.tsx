@@ -108,6 +108,9 @@ export default function AdminPage() {
     setModalData((prev) => ({ ...prev, [name]: value }));
   }, []);
 
+  // 保存成功后的线上生效提示
+  const [deployNotice, setDeployNotice] = useState<string | null>(null);
+
   const handleSave = useCallback(async () => {
     setSaving(true);
     const action = modalIndex !== null ? 'edit' : 'add';
@@ -122,7 +125,8 @@ export default function AdminPage() {
 
       // 生产环境走 GitHub 提交，提示用户等待重建
       if (json.mode === 'github') {
-        alert('保存成功，变更已提交到 GitHub。\nVercel 重新构建约需 30-60 秒后线上生效。');
+        setDeployNotice('变更已提交到 GitHub，Vercel 正在重新构建，线上页面约 1–3 分钟后生效。当前页面已即时预览最新数据。');
+        setTimeout(() => setDeployNotice(null), 8000);
       }
 
       // Optimistically update local state
@@ -256,6 +260,13 @@ export default function AdminPage() {
   // ═══════════════════════════════════════════════════════════════
   return (
     <>
+      {/* Deploy Notice */}
+      {deployNotice && (
+        <div className="fixed top-0 left-0 right-0 z-[70] bg-amber-500 text-white text-sm text-center py-2.5 px-4 shadow-md">
+          {deployNotice}
+        </div>
+      )}
+
       <PageHero
         title={lang === 'zh' ? '后台管理' : 'Admin Dashboard'}
         subtitle={lang === 'zh' ? '直接在网页布局中管理内容，就像进入了编辑模式' : 'Manage content directly in the website layout, as if entering edit mode'}
