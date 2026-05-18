@@ -294,6 +294,21 @@
       "email": "12313553@mail.sustech.edu.cn",
       "started": "Jun 2023",
       "photo": "/images/team/xinyu_zou.jpg"
+    },
+    {
+      "name": "Gefan Gao",
+      "nameCn": "高舸帆",
+      "role": "Undergraduate",
+      "leftRole": "",
+      "current": "",
+      "currentCn": "",
+      "email": "12310622@mail.sustech.edu.cn",
+      "education": "",
+      "educationCn": "",
+      "started": "Sep 2023",
+      "photo": "/images/team/1779091765081_u2zm.jpg",
+      "roleCn": "本科生",
+      "id": 1
     }
   ],
   "alumni": {
