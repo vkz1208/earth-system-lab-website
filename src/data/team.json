@@ -309,6 +309,21 @@
       "photo": "/images/team/1779091765081_u2zm.jpg",
       "roleCn": "本科生",
       "id": 1
+    },
+    {
+      "name": "Gefan Gao",
+      "nameCn": "高舸帆",
+      "role": "Undergraduate",
+      "leftRole": "",
+      "current": "",
+      "currentCn": "",
+      "email": "12310622@mail.sustech.edu.cn",
+      "education": "",
+      "educationCn": "",
+      "started": "Sep 2023",
+      "photo": "/images/team/1779091956507_vlxq.jpg",
+      "roleCn": "本科生",
+      "id": 2
     }
   ],
   "alumni": {
