@@ -89,11 +89,12 @@
     {
       "name": "Tianyun Dong",
       "nameCn": "董天云",
-      "role": "Postdoc",
-      "roleCn": "博士后",
+      "role": "Research Assistant Professor",
+      "roleCn": "研究助理教授",
       "email": "1418619971@qq.com",
       "started": "Aug 2023",
-      "photo": "/images/team/tianyun_dong.jpg"
+      "photo": "/images/team/tianyun_dong.jpg",
+      "_origIdx": 3
     },
     {
       "name": "Shuxin Luo",
